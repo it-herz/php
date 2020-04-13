@@ -251,7 +251,8 @@ RUN apt-get install -y libmemcached-dev && \
 RUN apt-get install -y sendemail
 #install RU locales  #locale -a
 RUN apt-get install -y locales 
-RUN echo LANG="ru_RU.UTF-8" >> /etc/default/locale 
+RUN echo LANG="ru_RU.UTF-8" >> /etc/default/locale
+RUN echo 'LC_TIME="ru_RU.UTF-8"' >> /etc/default/locale
 RUN echo LANG="ru_RU.UTF-8" >> /etc/environment  
 RUN echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
 RUN dpkg-reconfigure --frontend=noninteractive locales
